@@ -5,10 +5,18 @@
 
 var express = require('express')
   , exphbs  = require('express3-handlebars')
+  , stylus = require('stylus')
+  , nib = require('nib')
   , router = require('./router')
   , http = require('http')
   , path = require('path');
 
+
+function compile(str, path) {
+  return stylus(str)
+    .set('filename', path)
+    .use(nib())
+}
 
 var app = express();
 
@@ -19,6 +27,11 @@ app.set('view engine', 'handlebars');
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.use(express.favicon());
 app.use(express.logger('dev'));
+app.use(stylus.middleware(
+  { src: __dirname + '/public'
+  , compile: compile
+  }
+));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
