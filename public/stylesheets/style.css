@@ -1,7 +1,7 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-a {
-  color: #00b7ff;
-}
+body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}
+a{color:#00b7ff}
+.clickme{opacity:1;-ms-filter:none;filter:none;-webkit-transition:opacity 0.5s linear 0.5s;-moz-transition:opacity 0.5s linear 0.5s;-o-transition:opacity 0.5s linear 0.5s;-ms-transition:opacity 0.5s linear 0.5s;transition:opacity 0.5s linear 0.5s;}
+.clickme.clicked{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}
+.flex-container{display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-ms-flexbox;display:box;display:flex;}
+.flex-container > div{-webkit-box-flex:1;-moz-box-flex:1;-o-box-flex:1;box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;display:block;}
+.flex-container > div img{-webkit-border-radius:20px;border-radius:20px;max-width:100%}

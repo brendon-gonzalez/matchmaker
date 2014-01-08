@@ -15,8 +15,10 @@ var express = require('express')
 function compile(str, path) {
   return stylus(str)
     .set('filename', path)
-    .use(nib())
+    .set('compress', true)
+    .use(nib());
 }
+
 
 var app = express();
 

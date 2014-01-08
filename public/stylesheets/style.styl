@@ -1,3 +1,4 @@
+@import 'nib';
 @import "stylus/variables";
 
 body {
@@ -7,4 +8,25 @@ body {
 
 a {
   color: $link-color;
+}
+
+.clickme {
+  opacity: 1;
+  transition: opacity .5s linear .5s;
+  &.clicked {
+    opacity: 0;
+  }
+}
+
+
+.flex-container {
+  display: flex;
+  > div {
+    flex: 1;
+    display: block;
+    img {
+      border-radius: 20px;
+      max-width: 100%;
+    }
+  }
 }
